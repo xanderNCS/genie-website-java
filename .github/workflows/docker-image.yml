@@ -15,6 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Current location
-      run: pwd
+      run: |
+        echo "A initial message, print contents"
+        ls -lrta
+        echo "Another message or command"
+        mkdir temp
+        ls -lrta
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s) .
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
